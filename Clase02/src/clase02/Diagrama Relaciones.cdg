@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Diagrama Relaciones">
+  <ClassDiagramComponents>
+    <Class name="Cuenta" package="clase02" visibility="public" xPosition="434.0" yPosition="74.0">
+      <Fields>
+        <Field name="nro" type="int" visibility="private"/>
+        <Field name="moneda" type="String" visibility="private"/>
+        <Field name="saldo" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="nro"/>
+          <Argument type="String" name="moneda"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="depositar" returnType="float" visibility="public">
+          <Argument type="float" name="monto"/>
+        </Method>
+        <Method name="debitar" returnType="float" visibility="public">
+          <Argument type="float" name="monto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="clase02" visibility="public" xPosition="30.0" yPosition="140.0">
+      <Fields>
+        <Field name="nro" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="cuenta" type="Cuenta" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="inr" name="nro"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCuenta" returnType="Cuenta" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ClienteEmpresa" package="clase02" visibility="public" xPosition="748.0" yPosition="194.0">
+      <Fields>
+        <Field name="nro" type="int" visibility="private"/>
+        <Field name="razonSocial" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="cuentas" type="List&lt;Cuenta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="nro"/>
+          <Argument type="String" name="razonSocial"/>
+          <Argument type="String" name="direccion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCuentas" returnType="List&lt;Cuenta&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cuentas" source="clase02.ClienteEmpresa" target="clase02.Cuenta" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="cuenta" source="clase02.Cliente" target="clase02.Cuenta" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

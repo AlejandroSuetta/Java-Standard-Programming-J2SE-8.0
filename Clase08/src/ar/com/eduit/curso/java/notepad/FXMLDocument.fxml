@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="578.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ar.com.eduit.curso.java.notepad.FXMLDocumentController">
+   <children>
+      <MenuBar layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+              <MenuItem mnemonicParsing="false" onAction="#abrir" text="Abrir" />
+                  <MenuItem mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Opciones">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#acerca" text="Acerca" />
+              <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="txaText" layoutX="189.0" layoutY="187.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0" />
+   </children>
+</AnchorPane>

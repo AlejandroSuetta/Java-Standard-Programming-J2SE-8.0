@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Diagrama de Herencia">
+  <ClassDiagramComponents>
+    <Class name="Direccion" package="" visibility="public" xPosition="36.0" yPosition="28.0">
+      <Fields>
+        <Field name="calle" type="String" visibility="private"/>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="piso" type="String" visibility="private"/>
+        <Field name="depto" type="String" visibility="private"/>
+        <Field name="ciudad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="calle"/>
+          <Argument type="String" name="numero"/>
+          <Argument type="String" name="piso"/>
+          <Argument type="String" name="depto"/>
+          <Argument type="String" name="ciudad"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="calle"/>
+          <Argument type="String" name="numero"/>
+          <Argument type="String" name="piso"/>
+          <Argument type="String" name="depto"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="" visibility="public" isAbstract="true" xPosition="677.0" yPosition="28.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="direccion" type="Direccion" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Direccion" name="direccion"/>
+          <Argument type="int" name="edad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="saludar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleado" package="" visibility="public" xPosition="612.0" yPosition="403.0">
+      <Fields>
+        <Field name="nroLegajo" type="int" visibility="private"/>
+        <Field name="sueldoBasico" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="saludar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="" visibility="public" xPosition="1090.0" yPosition="403.0">
+      <Fields>
+        <Field name="nroCliente" type="int" visibility="private"/>
+        <Field name="cuenta" type="Cuenta" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="saludar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Empleado" target="Persona"/>
+    <HasRelation name="direccion" source="Persona" target="Direccion" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Cliente" target="Persona"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
